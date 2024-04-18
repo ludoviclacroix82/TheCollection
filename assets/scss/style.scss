@@ -1,4 +1,335 @@
 @import 'libs/_reset.scss';
 @import 'libs/_mediaQueries.scss';
 @import 'libs/_fonts.scss';
+@import 'libs/_variables.scss';
 
+
+header{
+    width: auto;
+    height: 230px;
+    background-color: $primaryBackgroundColor;
+    display: flex;
+    flex-direction: column;
+
+    @include Mobile {
+        height: 300px;
+
+    }
+    .header-wrap{
+        display: flex;
+        flex-direction: row;
+        .logo{
+            width: 20%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include Mobile {
+                height: 300px;
+            }
+    
+            img{
+                width: 90%;
+                height: 90%;
+                object-fit: cover;
+                object-position: center;
+            }
+            @include Mobile {
+                height: 300px;
+                width: 80%;
+                height: 80%;
+            }
+        }
+        .content{
+            width: 80%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:baseline;
+    
+            @include Mobile {
+                height: 300px;
+            }
+    
+            h1{
+                @extend .roboto-regular;
+                font-size: 2rem;
+                color:$tilteColor;
+            }
+            p{
+                width: 50%;
+                padding: 10px 0px;
+                @extend .roboto-regular;
+                font-size: 1rem;
+                color: $textColor;
+                @include Mobile {
+                    width: 90%;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+    }
+    
+    nav{
+        width: auto;
+        min-height: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        %link-item{
+            width: 100%;
+            transition: height 0.8s;
+            background-color: $pimaryColor;
+            position: relative ;
+            z-index: 5;
+            transition: height 0.8s;
+            height: 100px;
+
+            a{
+                @extend .roboto-regular;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 50px;
+                height: 30px;
+                padding: 0px 10px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-left: 1px solid #0150b1;
+                border-right: 1px solid #002047;
+                cursor: pointer;
+                transition: background-color 0.8s;
+                color:$secondaryTextColor;
+                &:hover{
+                    background-color: #0150b1;
+                }
+            }
+        }
+
+        .nav-team{
+           @extend %link-item;
+           display: none;          
+        }
+        .nav-players{
+            @extend %link-item; 
+            display: nobne;         
+         }
+         .nav-poste{
+            @extend %link-item;          
+         }
+
+        .nav-link{
+            width: 100%;
+            height: 30px;
+            background-color: $secondaryColor;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            a{
+                @extend .roboto-regular;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 50px;
+                height: 30px;
+                padding: 0px 10px;
+                color: $secondaryTextColor !important;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-left: 1px solid #e75e74;
+                border-right: 1px solid #c0001e;
+                cursor: pointer;
+                background-color: $secondaryColor;
+                transition: background-color 0.8s;
+    
+                &:hover{
+                    background-color:$pimaryColor !important;
+                    transition: background-color 0.8s;
+                }
+            }
+            .home{
+                border-left:0;
+                svg{
+                    fill:$secondaryTextColor;
+                    width: 24px;
+                    height: 24px;
+                }            
+            }
+
+            a[target="nav-team"]:hover .nav-team{
+               background-color: red !important;
+               
+            }
+        }
+        
+    }
+}
+
+main{
+    width: auto;
+    min-height: 600px;
+    background-color: $primaryBackgroundColor;   
+    section{
+        width: auto;
+        padding: 50px 0px;
+        .cards{
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 50px;
+
+            @include Mobile {
+                grid-template-columns: repeat(1,1fr);                
+                gap:0;
+                row-gap: 50px;
+            }
+
+            %cardSection{
+                width: 90%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .card{
+                width: 320px;
+                height: 460px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+                &:hover .image .logo-team{
+                    right:25%;
+                    transition: all 0.8s;
+                }
+
+                .image{
+                    width: auto;
+                    height: 210px;
+                    background-color: $pimaryColor;
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    figure{
+                        width: auto;
+                        height: 180px;
+                        position: absolute;
+                        img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        }
+                    }
+                    .logo-team{
+                        position: relative;
+                        width: 100%;
+                        height: 210px;
+                        right: 50%;
+                        transition: all 0.8s;
+                    }
+                    
+                }
+                .category{
+                    @extend %cardSection;
+                    height: 70px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    %categoryItem{                        
+                        min-width: 40%;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0px 5px;
+                        border-radius: 5px;
+                        background-color: $primaryBackgroundColor;
+                       
+                        p{
+                            @extend .roboto-regular;
+                            font-size: 0.6rem;
+                            color: $secondaryTextColor; 
+                            text-transform:uppercase;
+                            font-weight: bold
+                        }
+                    }
+
+                    .team{
+                        @extend %categoryItem;
+                        background-color: $secondaryColor;                        
+                    }
+                    .poste{
+                        @extend %categoryItem;
+                        background-color: $pimaryColor;  
+                    }
+                    
+                }
+                .name-player{
+                    @extend %cardSection;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: baseline;
+                    justify-content: center;
+                    height: 80px;
+
+                    h2{
+                        @extend .roboto-regular;
+                        font-size: 1.4rem;
+                        color: $textColor; 
+                        text-transform:uppercase;
+                        font-weight: bold;
+                    }
+                    h3{
+                        @extend .roboto-regular;
+                        font-size: 0.8rem;
+                        color: $sousTextColor; 
+                        text-transform:capitalize;
+                        font-weight: 600; 
+                    }
+                }
+                .content{
+                    @extend %cardSection;
+                    height: 160px;
+                    align-items: baseline;
+                    p{
+                        @extend .roboto-regular;
+                        font-size: 0.8rem;
+                        color: $sousTextColor; 
+                        text-transform:none;
+                        font-weight: 500;
+                        text-align: justify;
+                    }
+                }
+                .footer{
+                    @extend %cardSection;
+                    height: 40px;
+                    svg{
+                        fill:$pimaryColor;
+                        &:hover{
+                            fill:$secondaryColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+footer{
+    width: auto;
+    height: 100px;
+    background-color: $footerBackgroundColor;
+}

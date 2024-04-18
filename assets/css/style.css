@@ -4,7 +4,10 @@
   padding: 0; }
 
 body {
-  font-size: 16px; }
+  font-size: 16px;
+  max-width: 1440px;
+  background-color: #c0c0c0;
+  margin: 0 auto; }
 
 a {
   text-decoration: none;
@@ -13,9 +16,249 @@ a {
 a:hover, a:visited, a:focus {
   color: #000; }
 
-.roboto-regular {
+.roboto-regular, header .header-wrap .content h1, header .header-wrap .content p, header nav .nav-team a, header nav .nav-players a, header nav .nav-poste a, header nav .nav-link a, main section .cards .card .category .team p, main section .cards .card .category .poste p, main section .cards .card .name-player h2, main section .cards .card .name-player h3, main section .cards .card .content p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal; }
+
+header {
+  width: auto;
+  height: 230px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column; }
+  @media (max-width: 640px) {
+    header {
+      height: 300px; } }
+  header .header-wrap {
+    display: flex;
+    flex-direction: row; }
+    header .header-wrap .logo {
+      width: 20%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      @media (max-width: 640px) {
+        header .header-wrap .logo {
+          height: 300px; } }
+      header .header-wrap .logo img {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        object-position: center; }
+      @media (max-width: 640px) {
+        header .header-wrap .logo {
+          height: 300px;
+          width: 80%;
+          height: 80%; } }
+    header .header-wrap .content {
+      width: 80%;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: baseline; }
+      @media (max-width: 640px) {
+        header .header-wrap .content {
+          height: 300px; } }
+      header .header-wrap .content h1 {
+        font-size: 2rem;
+        color: #01408d; }
+      header .header-wrap .content p {
+        width: 50%;
+        padding: 10px 0px;
+        font-size: 1rem;
+        color: #000; }
+        @media (max-width: 640px) {
+          header .header-wrap .content p {
+            width: 90%;
+            font-size: 1rem; } }
+  header nav {
+    width: auto;
+    min-height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    header nav .nav-team, header nav .nav-players, header nav .nav-poste {
+      width: 100%;
+      transition: height 0.8s;
+      background-color: #01408d;
+      position: relative;
+      z-index: 5;
+      transition: height 0.8s;
+      height: 100px; }
+      header nav .nav-team a, header nav .nav-players a, header nav .nav-poste a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        height: 30px;
+        padding: 0px 10px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-left: 1px solid #0150b1;
+        border-right: 1px solid #002047;
+        cursor: pointer;
+        transition: background-color 0.8s;
+        color: #fff; }
+        header nav .nav-team a:hover, header nav .nav-players a:hover, header nav .nav-poste a:hover {
+          background-color: #0150b1; }
+    header nav .nav-team {
+      display: none; }
+    header nav .nav-players {
+      display: nobne; }
+    header nav .nav-link {
+      width: 100%;
+      height: 30px;
+      background-color: #e9062a;
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      header nav .nav-link a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        height: 30px;
+        padding: 0px 10px;
+        color: #fff !important;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-left: 1px solid #e75e74;
+        border-right: 1px solid #c0001e;
+        cursor: pointer;
+        background-color: #e9062a;
+        transition: background-color 0.8s; }
+        header nav .nav-link a:hover {
+          background-color: #01408d !important;
+          transition: background-color 0.8s; }
+      header nav .nav-link .home {
+        border-left: 0; }
+        header nav .nav-link .home svg {
+          fill: #fff;
+          width: 24px;
+          height: 24px; }
+      header nav .nav-link a[target="nav-team"]:hover .nav-team {
+        background-color: red !important; }
+
+main {
+  width: auto;
+  min-height: 600px;
+  background-color: #fff; }
+  main section {
+    width: auto;
+    padding: 50px 0px; }
+    main section .cards {
+      width: 80%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px; }
+      @media (max-width: 640px) {
+        main section .cards {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 0;
+          row-gap: 50px; } }
+      main section .cards .card .category, main section .cards .card .name-player, main section .cards .card .content, main section .cards .card .footer {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center; }
+      main section .cards .card {
+        width: 320px;
+        height: 460px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+        main section .cards .card:hover .image .logo-team {
+          right: 25%;
+          transition: all 0.8s; }
+        main section .cards .card .image {
+          width: auto;
+          height: 210px;
+          background-color: #01408d;
+          display: flex;
+          justify-content: center;
+          align-items: end; }
+          main section .cards .card .image figure {
+            width: auto;
+            height: 180px;
+            position: absolute; }
+            main section .cards .card .image figure img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center; }
+          main section .cards .card .image .logo-team {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            right: 50%;
+            transition: all 0.8s; }
+        main section .cards .card .category {
+          height: 70px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between; }
+          main section .cards .card .category .team, main section .cards .card .category .poste {
+            min-width: 40%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 5px;
+            border-radius: 5px;
+            background-color: #fff; }
+            main section .cards .card .category .team p, main section .cards .card .category .poste p {
+              font-size: 0.6rem;
+              color: #fff;
+              text-transform: uppercase;
+              font-weight: bold; }
+          main section .cards .card .category .team {
+            background-color: #e9062a; }
+          main section .cards .card .category .poste {
+            background-color: #01408d; }
+        main section .cards .card .name-player {
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          justify-content: center;
+          height: 80px; }
+          main section .cards .card .name-player h2 {
+            font-size: 1.4rem;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold; }
+          main section .cards .card .name-player h3 {
+            font-size: 0.8rem;
+            color: #8d8d8d;
+            text-transform: capitalize;
+            font-weight: 600; }
+        main section .cards .card .content {
+          height: 160px;
+          align-items: baseline; }
+          main section .cards .card .content p {
+            font-size: 0.8rem;
+            color: #8d8d8d;
+            text-transform: none;
+            font-weight: 500;
+            text-align: justify; }
+        main section .cards .card .footer {
+          height: 40px; }
+          main section .cards .card .footer svg {
+            fill: #01408d; }
+            main section .cards .card .footer svg:hover {
+              fill: #e9062a; }
+
+footer {
+  width: auto;
+  height: 100px;
+  background-color: #01408d; }
 
 /*# sourceMappingURL=style.css.map */
