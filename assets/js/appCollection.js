@@ -9,24 +9,28 @@ elemCards.className = "cards"
 
 // Récupérer le paramètre de requête du genre dans l'URL
 const urlParams = new URLSearchParams(window.location.search);
-const postParam = urlParams.get('poste');
+const posteParam = urlParams.get('poste');
+const teamParam = urlParams.get('team');
+const playerParamName = urlParams.get('name');
+const playerParamFName = urlParams.get('firstName');
 
-
-if (postParam !== "")
-{
-
-    creatCard("players.poste ==="+ postParam);
-}
-
-function creatCard(param){
-    collection.forEach(players => {
-
-        if (param){
+    const paramFilter = collection.filter(paramPlayers =>{
+        if(posteParam){
+            return paramPlayers.poste === posteParam; 
+        }else if(teamParam){
+            return paramPlayers.team === teamParam; 
+        }else if(playerParamName && playerParamFName){
+            return paramPlayers.name === playerParamName && paramPlayers.firstName === playerParamFName; 
+        }else{
+            return true;
+        }
+    }).forEach(players => {
            
             /* Creation div Cards */
             const elemCard = document.createElement('div');
             elemCards.appendChild(elemCard);
             elemCard.className = "card";
+            elemCard.id=players.name+players.firstName;
     
             /* Creation zone Image Card */
             const cardImage = document.createElement('div');    
@@ -91,34 +95,59 @@ function creatCard(param){
             /* Creation zone Footer */
             const elemFooter = document.createElement('div'); 
             const footerStat = document.createElement('a');
+            const footerDelete = document.createElement('a');
     
             elemCard.appendChild(elemFooter);
             elemFooter.appendChild(footerStat);
+            elemFooter.appendChild(footerDelete);
     
             elemFooter.className = "footer";
-            footerStat.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>';
+            footerStat.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"  class="bi bi-info-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>';
             footerStat.href=players.link;
-            footerStat.target = "_blank";
-    
-            }    
-    
-    });
-}
+            footerStat.target = "_blank";  
+            
+            footerDelete.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="bi bi-window-x" viewBox="0 0 16 16"><path d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M4 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/><path d="M0 4a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v4a.5.5 0 0 1-1 0V7H1v5a1 1 0 0 0 1 1h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-2zm1 2h13V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/><path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-4.854-1.354a.5.5 0 0 0 0 .708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647-.646-.647a.5.5 0 0 0-.708 0"/></svg>';
+            footerDelete.title = 'Suprimer Carte'
 
+            footerDelete.addEventListener('click', function(event) {
 
+                cardDelete (players.name,players.firstName);
+                
+            });
+        });
 
 teams.forEach(team => {
-    const elemNavteams = document.querySelector(".nav-team"); // Changed "nav-team" to ".nav-team" assuming it's a class
+    const elemNavteams = document.querySelector(".nav-team"); 
     const navteam = document.createElement('a');
-    elemNavteams.appendChild(navteam); // Changed append to appendChild
+    elemNavteams.appendChild(navteam);
     navteam.href = "index.html?team=" + team.name;
     navteam.innerHTML = team.name;
 });
 
 postes.forEach(poste => {
-    const elemNavteams = document.querySelector(".nav-poste"); // Changed "nav-team" to ".nav-team" assuming it's a class
-    const navteam = document.createElement('a');
-    elemNavteams.appendChild(navteam); // Changed append to appendChild
-    navteam.href = "index.html?poste=" + poste.name;
-    navteam.innerHTML = poste.name;
+    const elemNavPost = document.querySelector(".nav-poste"); 
+    const navPost = document.createElement('a');
+    elemNavPost.appendChild(navPost); 
+    navPost.href = "index.html?poste=" + poste.name;
+    navPost.innerHTML = poste.name;
 });
+
+collection.forEach(players =>{
+    const elemNavPlayers = document.querySelector(".nav-players"); 
+    const navPlayer = document.createElement('a');
+    elemNavPlayers.appendChild(navPlayer);
+    navPlayer.href = "index.html?name=" + players.name +"&firstName="+ players.firstName;
+    navPlayer.innerHTML = players.name +" " + players.firstName;
+});
+
+/**
+ * Supprime la carte 
+ * @param {*} name nom du player 
+ * @param {*} fName prénom du player 
+ */
+function cardDelete (name,fName){
+    const divIndex = document.getElementById(name+fName);
+    let askDelete = confirm("Voulez-vous supprimer la Carte :"+name + " " + fName)
+    if(askDelete === true)
+        divIndex.remove();
+}

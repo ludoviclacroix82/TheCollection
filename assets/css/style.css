@@ -82,12 +82,16 @@ header {
     align-items: center; }
     header nav .nav-team, header nav .nav-players, header nav .nav-poste {
       width: 100%;
+      min-height: 200px;
       transition: height 0.8s;
       background-color: #01408d;
       position: relative;
       z-index: 5;
-      transition: height 0.8s;
-      height: 100px; }
+      border-bottom: 2px solid #e9062a;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.8s;
+      bottom: 0; }
       header nav .nav-team a, header nav .nav-players a, header nav .nav-poste a {
         display: inline-flex;
         align-items: center;
@@ -105,10 +109,10 @@ header {
         color: #fff; }
         header nav .nav-team a:hover, header nav .nav-players a:hover, header nav .nav-poste a:hover {
           background-color: #0150b1; }
-    header nav .nav-team {
-      display: none; }
-    header nav .nav-players {
-      display: nobne; }
+    header nav .nav-open {
+      display: block !important;
+      opacity: 1 !important;
+      transition: opacity 0.8s; }
     header nav .nav-link {
       width: 100%;
       height: 30px;
@@ -141,8 +145,6 @@ header {
           fill: #fff;
           width: 24px;
           height: 24px; }
-      header nav .nav-link a[target="nav-team"]:hover .nav-team {
-        background-color: red !important; }
 
 main {
   width: auto;
@@ -252,7 +254,10 @@ main {
         main section .cards .card .footer {
           height: 40px; }
           main section .cards .card .footer svg {
-            fill: #01408d; }
+            fill: #01408d;
+            margin-left: 20px;
+            width: 18px;
+            height: 18px; }
             main section .cards .card .footer svg:hover {
               fill: #e9062a; }
 
