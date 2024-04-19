@@ -15,15 +15,14 @@ document.addEventListener('mouseover', function(event) {
         var targetId = event.target.getAttribute('data-target');
         console.log(targetId);        
         document.querySelector("."+ targetId).classList.toggle('nav-open');  
-    } 
-           
-    document.addEventListener('mouseout', function(event){
-        const subLink = document.querySelector('nav-subLink');
-        //const subLinkChildren = document.querySelector('.nav-subLink').children;
-        subLink.remove('nav-open');
-        console.log(subLinkChildren);
-    });
-    
+    }              
 });
 
+document.addEventListener('mouseout', function(event){
+    if(event.target.classList.contains('nav-subLink')){
+        
+        console.log(event.target.classList.contains('nav-subLink'));
+    }
+    
+});
 
