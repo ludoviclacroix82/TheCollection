@@ -8,10 +8,14 @@
 HTML and CSS
 Javascript Basics
 The DOM
+Sass
 
 <h3>Responsive ?</h3>
 
 Oui, il est responsive!
+
+<h3>A venir<h3>
+Optimisation du menu pour les sous-menu.
 
 <h3>Screenshots</h3>
 
