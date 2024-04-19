@@ -23,6 +23,8 @@
 </p>
 
 <h3>Screenshots</h3>
+<p>
+    gitHub pages : <a href="https://ludoviclacroix82.github.io/TheCollection/">https://ludoviclacroix82.github.io/TheCollection/</a></p>
 
 <img src="projetCapture.png">
 
