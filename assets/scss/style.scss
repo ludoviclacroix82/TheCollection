@@ -112,20 +112,26 @@ header{
             }
         }
 
-        .nav-team{
-           @extend %link-item;     
-        }
-        .nav-players{
-            @extend %link-item;        
-         }
-         .nav-poste{
-            @extend %link-item;          
-         }
-        .nav-open{
-            display: block !important;
-            opacity:1 !important;
-            transition: opacity 0.8s;
-        }
+        .nav-subLink{
+            width: 100%;
+            min-height: 200px;
+            position:relative;
+            
+            .nav-team{
+                @extend %link-item;     
+             }
+             .nav-players{
+                 @extend %link-item;        
+              }
+              .nav-poste{
+                 @extend %link-item;          
+              }
+             .nav-open{
+                 display: block !important;
+                 opacity:1 !important;
+                 transition: opacity 0.8s;
+             }
+        }   
 
         .nav-link{
             width: 100%;
