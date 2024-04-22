@@ -195,6 +195,9 @@ main {
             width: auto;
             height: 180px;
             position: absolute; }
+            @media (max-width: 640px) {
+              main section .cards .card .image figure {
+                height: 150px; } }
             main section .cards .card .image figure img {
               width: 100%;
               height: 100%;

@@ -228,6 +228,9 @@ main{
                         width: auto;
                         height: 180px;
                         position: absolute;
+                        @include Mobile {
+                            height: 150px;
+                        }
                         img{
                         width: 100%;
                         height: 100%;
