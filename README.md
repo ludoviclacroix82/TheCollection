@@ -14,15 +14,15 @@
 
 ## Responsive ?
 
-    Oui, il est responsive!
+Oui, il est responsive!
 
 
 ## Screenshots
 
-    gitHub pages : <a href="https://ludoviclacroix82.github.io/TheCollection/">https://ludoviclacroix82.github.io/TheCollection/</a>
+gitHub pages : <a href="https://ludoviclacroix82.github.io/TheCollection/">https://ludoviclacroix82.github.io/TheCollection/</a>
 
 <img src="projetCapture.png">
 
 ### Source
 
-    Les images & description : <a href="https://www.nba.com/">https://www.nba.com/</a>
+Les images & description : <a href="https://www.nba.com/">https://www.nba.com/</a>
