@@ -82,7 +82,7 @@ header {
     align-items: center; }
     header nav .nav-subLink .nav-team, header nav .nav-subLink .nav-players, header nav .nav-subLink .nav-poste {
       width: 100%;
-      min-height: 200px;
+      min-height: 80px;
       transition: height 0.8s;
       background-color: #01408d;
       position: relative;
@@ -111,7 +111,7 @@ header {
           background-color: #0150b1; }
     header nav .nav-subLink {
       width: 100%;
-      min-height: 200px;
+      min-height: 100px;
       position: relative; }
       header nav .nav-subLink .nav-open {
         display: block !important;
