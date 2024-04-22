@@ -82,7 +82,7 @@ header {
     align-items: center; }
     header nav .nav-subLink .nav-team, header nav .nav-subLink .nav-players, header nav .nav-subLink .nav-poste {
       width: 100%;
-      min-height: 80px;
+      min-height: 20px;
       transition: height 0.8s;
       background-color: #01408d;
       position: relative;
