@@ -192,7 +192,7 @@ main {
           justify-content: center;
           align-items: end; }
           main section .cards .card .image figure {
-            width: auto;
+            width: 246px;
             height: 180px;
             position: absolute; }
             @media (max-width: 640px) {
