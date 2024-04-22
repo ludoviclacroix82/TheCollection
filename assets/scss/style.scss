@@ -321,6 +321,7 @@ main{
                     @extend %cardSection;
                     height: 40px;
                     svg{
+                        cursor: pointer;
                         fill:$pimaryColor;
                         margin-left: 20px;
                         width: 18px;

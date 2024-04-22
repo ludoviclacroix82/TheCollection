@@ -258,6 +258,7 @@ main {
         main section .cards .card .footer {
           height: 40px; }
           main section .cards .card .footer svg {
+            cursor: pointer;
             fill: #01408d;
             margin-left: 20px;
             width: 18px;
