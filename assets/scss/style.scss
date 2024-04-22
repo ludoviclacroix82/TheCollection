@@ -229,7 +229,7 @@ main{
                         height: 180px;
                         position: absolute;
                         @include Mobile {
-                            height: 150px;
+                              height: 180px;
                         }
                         img{
                         width: 100%;
