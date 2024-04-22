@@ -79,7 +79,7 @@ header{
 
         %link-item{
             width: 100%;
-            min-height: 200px;
+            min-height: 80px;
             transition: height 0.8s;
             background-color: $pimaryColor;
             position: relative ;
@@ -114,9 +114,8 @@ header{
 
         .nav-subLink{
             width: 100%;
-            min-height: 200px;
+            min-height: 100px;
             position:relative;
-            
             .nav-team{
                 @extend %link-item;     
              }

@@ -18,11 +18,16 @@ document.addEventListener('mouseover', function(event) {
     }              
 });
 
-document.addEventListener('mouseout', function(event){
-    if(event.target.classList.contains('nav-subLink')){
-        
-        console.log(event.target.classList.contains('nav-subLink'));
+const navSubLink = document.querySelector('.nav-subLink');
+//console.log(navSubLink);
+navSubLink.addEventListener('mouseleave', event => {
+    if (event.target.nodeName === 'DIV') {  
+        const navLinks = navSubLink.querySelectorAll('div');
+        //console.log(navLinks);
+        for (const navLink of navLinks) {
+            navLink.classList.remove('nav-open');
+            //console.log(navLink);
+        }
     }
-    
 });
 
