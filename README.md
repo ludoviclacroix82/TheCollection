@@ -1,28 +1,30 @@
 # The Collection NBA Cards
 
-## Les consignes
+## Purpose
 
-<a href="https://github.com/becodeorg/CRL-KELLER-7/tree/main/2.PROJECTS/2.TheCollection">https://github.com/becodeorg/CRL-KELLER-7/tree/main/2.PROJECTS/2.TheCollection</a>
+This project serves as an exercise to practice working with HTML and CSS for layout and styling, as well as basic JavaScript concepts such as the Document Object Model (DOM). By completing this project, learners will gain hands-on experience in manipulating the DOM with JavaScript to create dynamic and interactive web applications.
 
-## Langages Utilisés
+## Instructions
+
+The link to the instructions is available [here](https://github.com/becodeorg/CRL-KELLER-7/tree/main/2.PROJECTS/2.TheCollection).
+
+## Languages Used
 
 - HTML and CSS
-- Javascript Basics
+- JavaScript Basics
 - The DOM
 - Sass
 
+## Responsive?
 
-## Responsive ?
-
-Oui, il est responsive!
-
+Yes, the site is responsive!
 
 ## Screenshots
 
-gitHub pages : <a href="https://ludoviclacroix82.github.io/TheCollection/">https://ludoviclacroix82.github.io/TheCollection/</a>
+You can view the project result on GitHub Pages [here](https://ludoviclacroix82.github.io/TheCollection/).
 
-<img src="projetCapture.png">
+![Project Screenshot](projetCapture.png)
 
 ### Source
 
-Les images & description : <a href="https://www.nba.com/">https://www.nba.com/</a>
+The images and descriptions are sourced from [NBA.com](https://www.nba.com/).
